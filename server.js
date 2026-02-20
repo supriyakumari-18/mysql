@@ -72,7 +72,7 @@ const upload = multer({ storage: storage });
 
 app.post('/register/student', upload.single('images'),(req, res) => {
     const { name, email, password} = req.body;
-const images="https://res.cloudinary.com/<your-account>/image/upload/"+req.file.filename;
+const images="https://res.cloudinary.com/<your-account>/image/uploads/"+req.file.filename;
 
     const sqlQ = "INSERT INTO students(name,email,password,images) VALUES(?,?,?,?)";
 
